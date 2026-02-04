@@ -242,7 +242,7 @@ button {
   right: 0;
   bottom: 0;
   background-image: url("images/hero-bg-png.png");
-  background-size: cover;
+  /* background-size: 100%; */
   background-position: center;
   pointer-events: none;
 }
@@ -254,6 +254,10 @@ button {
   position: relative;
   z-index: 1;
   padding-top: 50px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .hero-title {
@@ -811,11 +815,26 @@ button {
 }
 
 .title-with-icon {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 16px;
   margin-bottom: 16px;
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+.orange-flower-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.orange-flower-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .auth-title {
@@ -2397,4 +2416,608 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #ff6a1a;
+}
+
+/* ===========================
+   ABOUT PAGE STYLES
+   =========================== */
+
+/* About Hero Section */
+.about-hero {
+  min-height: 60vh;
+  padding: 140px 20px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 80px;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.about-hero-title {
+  font-size: 73px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 0;
+  letter-spacing: -1.5px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  text-transform: capitalize;
+}
+
+.about-hero-description {
+  font-size: 16px;
+  color: var(--text-gray);
+  line-height: 1.7;
+  max-width: 750px;
+  margin: 0;
+}
+
+/* About Content Section */
+.about-content-section {
+  background: var(--dark-bg);
+  padding: 80px 0;
+}
+
+.about-images-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-bottom: 80px;
+}
+
+.about-image-large,
+.about-image-small {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  height: 400px;
+}
+
+.about-image-large img,
+.about-image-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Story & Values */
+.story-values-section {
+  margin-top: 60px;
+}
+
+.story-values-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.story-title-column {
+  position: sticky;
+  top: 140px;
+}
+
+.section-title-large-story {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  font-family: "Bricolage Grotesque", sans-serif;
+  color: var(--text-white);
+}
+
+.story-content-column {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.story-desc {
+  font-size: 14px;
+  color: var(--text-gray);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Quote Box */
+.quote-box {
+  display: flex;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 28px 24px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 16px 0;
+}
+
+.quote-logo {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border-radius: var(--radius-sm);
+  padding: 8px;
+  background-color: #1e1d1c;
+}
+
+.quote-logo img {
+  width: 100%;
+  height: auto;
+}
+
+.quote-content {
+  flex: 1;
+}
+
+.quote-text {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-white);
+  line-height: 150%;
+  margin-bottom: 12px;
+}
+
+.quote-author {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-gray);
+  margin: 0;
+}
+
+/* Values List */
+.values-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.value-list-item {
+  padding-left: 20px;
+  position: relative;
+}
+
+.value-list-item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.value-list-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 6px;
+}
+
+.value-list-desc {
+  font-size: 13px;
+  color: var(--text-gray);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Capabilities Section */
+.capabilities-section {
+  background: var(--dark-bg);
+  padding: 80px 0;
+}
+
+.capabilities-section.section-title-large {
+  display: flex;
+}
+
+.section-header-with-icon {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header-with-icon .section-title-large {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+.section-subtitle-center {
+  font-size: 15px;
+  color: var(--text-gray);
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.stat-box {
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 32px 24px;
+  text-align: left;
+  transition: var(--transition);
+}
+
+.stat-box:hover {
+  border-color: rgba(255, 85, 0, 0.3);
+}
+
+.stat-number {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text-white);
+  font-family: "Bricolage Grotesque", sans-serif;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 16px;
+  color: var(--text-gray);
+  font-weight: 400;
+}
+
+/* Capabilities Grid */
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.capability-card {
+  padding: 32px 28px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--card-border);
+  transition: var(--transition);
+}
+
+.capability-card:hover {
+  border-color: rgba(255, 85, 0, 0.3);
+  transform: translateY(-4px);
+}
+
+.capability-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.capability-desc {
+  font-size: 14px;
+  color: var(--text-gray);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Certifications Section */
+.certifications-section {
+  background: var(--dark-bg);
+  padding: 80px 0;
+}
+
+.certifications-subtitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-white);
+  text-align: center;
+  margin: 16px 0 12px;
+}
+
+.certifications-description {
+  font-size: 14px;
+  color: var(--text-gray);
+  line-height: 1.7;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.certifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.certification-item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 28px;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  transition: var(--transition);
+}
+
+.certification-item:hover {
+  border-color: rgba(255, 85, 0, 0.3);
+}
+
+.cert-preview {
+  flex-shrink: 0;
+  width: 120px;
+  height: 90px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--dark-card);
+}
+
+.cert-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cert-details {
+  flex: 1;
+}
+
+.cert-item-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 8px;
+}
+
+.cert-item-desc {
+  font-size: 13px;
+  color: var(--text-gray);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.cert-actions {
+  display: flex;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.cert-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary-orange);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.cert-link:hover {
+  color: #ff6a1a;
+  text-decoration: underline;
+}
+
+/* Why ICF Section */
+.why-icf-section {
+  background: var(--dark-bg);
+  padding: 80px 0;
+}
+
+.why-icf-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.icf-benefit-card {
+  padding: 40px 32px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--card-border);
+  transition: var(--transition);
+}
+
+.icf-benefit-card:hover {
+  border-color: rgba(255, 85, 0, 0.3);
+  transform: translateY(-4px);
+}
+
+.benefit-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 16px;
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+.benefit-desc {
+  font-size: 14px;
+  color: var(--text-gray);
+  line-height: 1.7;
+}
+
+/* Product Portfolio Section */
+.product-portfolio-section {
+  background: var(--dark-bg);
+  padding: 80px 0;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.product-card {
+  background: var(--dark-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  transition: var(--transition);
+}
+
+.product-card:hover {
+  border-color: rgba(255, 85, 0, 0.3);
+  transform: translateY(-4px);
+}
+
+.product-image {
+  height: 280px;
+  overflow: hidden;
+  padding: 24px;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+.product-info {
+  padding: 24px;
+}
+
+.product-info h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 12px;
+}
+
+.product-info p {
+  font-size: 13px;
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+/* ===========================
+   ABOUT PAGE RESPONSIVE
+   =========================== */
+
+@media (max-width: 1024px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 120px 0 60px;
+  }
+
+  .about-hero-title {
+    font-size: 56px;
+  }
+
+  .about-images-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .story-values-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .story-title-column {
+    position: static;
+  }
+
+  .section-title-large-story {
+    font-size: 42px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certification-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cert-preview {
+    width: 100%;
+    height: 150px;
+  }
+
+  .why-icf-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    min-height: 50vh;
+    padding: 100px 0 50px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .about-hero-title {
+    font-size: 42px;
+  }
+
+  .about-hero-description {
+    font-size: 14px;
+  }
+
+  .section-title-large-story {
+    font-size: 36px;
+  }
+
+  .quote-box {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .quote-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-number {
+    font-size: 40px;
+  }
+
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certification-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .cert-preview {
+    width: 100%;
+    height: 140px;
+  }
+
+  .cert-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .about-content-section,
+  .capabilities-section,
+  .certifications-section,
+  .why-icf-section,
+  .product-portfolio-section {
+    padding: 60px 0;
+  }
+
+  .section-header-with-icon .section-title-large {
+    font-size: 36px;
+  }
 }
