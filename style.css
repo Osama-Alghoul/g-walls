@@ -228,7 +228,7 @@ button {
   align-items: center;
   padding: 80px 0;
   overflow: hidden;
-  background: url("/images/hero-bg-png.png");
+  background: url("images/hero-bg-png.png");
   background-size: cover;
   background-position: top;
 }
