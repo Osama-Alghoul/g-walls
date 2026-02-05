@@ -167,6 +167,41 @@ if (blogGrid) {
 }
 
 // ===========================
+// Portfolio Carousel Scroll
+// ===========================
+const portfolioGrid = document.querySelector(".product-grid");
+const portfolioArrows = document.querySelectorAll(
+  ".portfolio-pagination .arrow-btn",
+);
+
+if (portfolioGrid && portfolioArrows.length > 0) {
+  portfolioArrows.forEach((arrow) => {
+    arrow.addEventListener("click", () => {
+      const direction = arrow.getAttribute("aria-label").toLowerCase();
+      const scrollAmount = portfolioGrid.clientWidth * 0.8;
+
+      if (direction === "next") {
+        portfolioGrid.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      } else {
+        portfolioGrid.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+      }
+    });
+  });
+
+  // Update counter on scroll
+  const counter = document.querySelector(".portfolio-pagination .page-counter");
+  if (counter) {
+    portfolioGrid.addEventListener("scroll", () => {
+      const scrollLeft = portfolioGrid.scrollLeft;
+      const width = portfolioGrid.clientWidth;
+      const index = Math.round(scrollLeft / width) + 1;
+      const total = portfolioGrid.querySelectorAll(".product-card").length;
+      counter.textContent = `0${index}/0${total}`;
+    });
+  }
+}
+
+// ===========================
 // Scroll Animations
 // ===========================
 const observerOptions = {
