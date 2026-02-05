@@ -24,7 +24,7 @@
     "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   /* Spacing */
-  --container-max: 1320px;
+  --container-max: 1400px;
   --section-padding: 80px 0;
 
   /* Border Radius */
@@ -228,7 +228,9 @@ button {
   align-items: center;
   padding: 80px 0;
   overflow: hidden;
-  background: #000000;
+  background: url("/images/hero-bg-png.png");
+  background-size: cover;
+  background-position: top;
 }
 
 .hero-text {
@@ -2425,13 +2427,18 @@ html {
 /* About Hero Section */
 .about-hero {
   min-height: 60vh;
-  padding: 140px 20px 80px;
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 80px;
+  padding: 140px 0 0;
+  /* margin: 0 auto; */
+  background: url("images/hero-bg-png.png");
+  background-size: cover;
+  background-position: top;
+}
+
+.about-hero-content {
+  margin-bottom: 66px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  max-width: 1400px;
-  margin: 0 auto;
 }
 
 .about-hero-title {
@@ -2461,7 +2468,7 @@ html {
 .about-images-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 24px;
+  gap: 8px;
   margin-bottom: 80px;
 }
 
@@ -2625,6 +2632,10 @@ html {
   font-family: "Bricolage Grotesque", sans-serif;
 }
 
+.section-header-with-icon p {
+  max-width: 676px;
+}
+
 .section-subtitle-center {
   font-size: 15px;
   color: var(--text-gray);
@@ -2637,8 +2648,8 @@ html {
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  margin-bottom: 48px;
+  gap: 8px;
+  margin-bottom: 16px;
 }
 
 .stat-box {
@@ -2672,7 +2683,7 @@ html {
 .capabilities-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  gap: 12px;
 }
 
 .capability-card {
@@ -2900,11 +2911,17 @@ html {
   .about-hero {
     grid-template-columns: 1fr;
     gap: 32px;
-    padding: 120px 0 60px;
+    padding: 120px 0 0px;
+  }
+
+  .about-hero-content {
+    flex-wrap: wrap;
+    padding: 96px 0 66px;
   }
 
   .about-hero-title {
     font-size: 56px;
+    margin-bottom: 32px;
   }
 
   .about-images-grid {
@@ -2954,7 +2971,7 @@ html {
 @media (max-width: 768px) {
   .about-hero {
     min-height: 50vh;
-    padding: 100px 0 50px;
+    padding: 100px 0 0;
     grid-template-columns: 1fr;
     gap: 24px;
   }
@@ -2979,10 +2996,6 @@ html {
   .quote-logo {
     width: 50px;
     height: 50px;
-  }
-
-  .stats-grid {
-    grid-template-columns: 1fr;
   }
 
   .stat-number {
