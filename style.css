@@ -3223,6 +3223,15 @@ html {
   border: 1px solid #333;
 }
 
+.dropdown-content::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 0;
+  right: 0;
+  height: 15px;
+}
+
 .dropdown-content a {
   color: var(--text-gray);
   padding: 12px 16px;
