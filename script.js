@@ -362,8 +362,42 @@ window.addEventListener("load", () => {
 });
 
 // ===========================
+// Filter Dropdowns (Mobile & Click Support)
+// ===========================
+const filterItems = document.querySelectorAll(".filter-item");
+
+if (filterItems.length > 0) {
+  filterItems.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      // Toggle current dropdown
+      const isActive = item.classList.contains("active");
+
+      // Close all other dropdowns
+      filterItems.forEach((otherItem) => {
+        otherItem.classList.remove("active");
+      });
+
+      if (!isActive) {
+        item.classList.add("active");
+      }
+
+      // Prevent event from bubbling up to document
+      e.stopPropagation();
+    });
+  });
+
+  // Close dropdowns when clicking anywhere else
+  document.addEventListener("click", () => {
+    filterItems.forEach((item) => {
+      item.classList.remove("active");
+    });
+  });
+}
+
+// ===========================
 // Console Welcome Message
 // ===========================
+
 console.log(
   "%c🔶 G-Walls Website",
   "color: #FF5C00; font-size: 24px; font-weight: bold;",

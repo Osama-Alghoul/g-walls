@@ -3205,8 +3205,14 @@ html {
 }
 
 /* Dropdown (Basic) */
-.filter-item:hover .dropdown-content {
+.filter-item.active .dropdown-content {
   display: block;
+}
+
+@media (hover: hover) {
+  .filter-item:hover .dropdown-content {
+    display: block;
+  }
 }
 
 .dropdown-content {
