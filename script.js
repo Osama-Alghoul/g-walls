@@ -243,19 +243,6 @@ window.addEventListener("scroll", () => {
 });
 
 // ===========================
-// Parallax Effect for Hero - DISABLED (User wants static image)
-// ===========================
-// const heroImage = document.querySelector(".hero-image");
-
-// window.addEventListener("scroll", () => {
-//   if (heroImage) {
-//     const scrolled = window.pageYOffset;
-//     const parallax = scrolled * 0.3;
-//     heroImage.style.transform = `translateY(${parallax}px)`;
-//   }
-// });
-
-// ===========================
 // Counter Animation for Rating
 // ===========================
 function animateCounter(element, target, duration = 2000) {
@@ -393,6 +380,53 @@ if (filterItems.length > 0) {
     });
   });
 }
+
+// ===========================
+// Custom Select Dropdown
+// ===========================
+const customSelects = document.querySelectorAll(".custom-select-v2");
+
+customSelects.forEach((select) => {
+  const trigger = select.querySelector(".select-trigger-v2");
+  const options = select.querySelectorAll(".select-option-v2");
+  const hiddenInput = select.querySelector('input[type="hidden"]');
+  const triggerImg = trigger.querySelector("img");
+
+  trigger.addEventListener("click", (e) => {
+    e.stopPropagation();
+    // Close other custom selects
+    customSelects.forEach((other) => {
+      if (other !== select) other.classList.remove("active");
+    });
+    select.classList.toggle("active");
+  });
+
+  options.forEach((option) => {
+    option.addEventListener("click", () => {
+      const value = option.getAttribute("data-value");
+      const img = option.querySelector("img");
+
+      // Update active state
+      options.forEach((opt) => opt.classList.remove("active"));
+      option.classList.add("active");
+
+      // Update trigger
+      triggerImg.src = img.src;
+      triggerImg.alt = img.alt;
+
+      // Update hidden input
+      hiddenInput.value = value;
+
+      // Close dropdown
+      select.classList.remove("active");
+    });
+  });
+});
+
+// Close all custom selects when clicking outside
+document.addEventListener("click", () => {
+  customSelects.forEach((select) => select.classList.remove("active"));
+});
 
 // ===========================
 // Console Welcome Message
