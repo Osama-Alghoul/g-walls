@@ -599,7 +599,8 @@ button {
 }
 
 .project-meta {
-  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .meta-row {
@@ -1915,10 +1916,8 @@ button {
   }
 
   .project-meta {
-    display: flex;
     flex-direction: column;
     gap: 12px;
-    margin-bottom: 20px;
   }
 
   .meta-row {
@@ -3550,7 +3549,8 @@ html {
 
 .content-block h2 {
   font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 32px;
+  font-size: 47px;
+  font-weight: 600;
   margin-bottom: 24px;
   display: flex;
   align-items: center;
@@ -3835,6 +3835,20 @@ html {
   }
   .block-images-row .block-image {
     height: 200px;
+  }
+  .project-content-grid {
+    padding: 40px 0;
+    gap: 40px;
+  }
+
+  .content-block h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .content-block h3 {
+    font-size: 20px;
+    margin-bottom: 16px;
   }
 }
 
@@ -4743,5 +4757,89 @@ html {
 
   .video-info h3 {
     font-size: 18px;
+  }
+}
+
+/* ===========================
+   Blog Page Styles
+   =========================== */
+
+#blog li {
+  margin: 0 0 16px 16px;
+}
+
+.core-thicknesses {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin: 24px 0 32px;
+}
+
+@media (max-width: 768px) {
+  .core-thicknesses {
+    gap: 12px;
+  }
+
+  .core-thicknesses .btn-dark-outline {
+    flex: 1 1 calc(50% - 6px);
+    padding: 12px 10px;
+    font-size: 13px;
+    text-align: center;
+    border-radius: 8px;
+    white-space: nowrap;
+  }
+}
+
+.projects-grid-blog {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 768px) {
+  .projects-grid-blog {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===========================
+   Performance Benefits Section
+   =========================== */
+.performance-benefits-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 32px 0 48px;
+}
+
+/* Contextual override for buttons in this grid */
+.performance-benefits-grid .btn-dark-outline {
+  padding: 16px 24px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .performance-benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .performance-benefits-grid .btn-dark-outline {
+    padding: 14px 10px;
+    font-size: 12px;
+    white-space: normal;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 64px;
+    border-radius: 10px;
+  }
+
+  /* Target the 3rd button to span 2 columns */
+  .performance-benefits-grid .btn-dark-outline:nth-child(3) {
+    grid-column: span 2;
   }
 }
